@@ -35,7 +35,8 @@ class shorewall(
     }
 
     package { 'shorewall':
-      ensure => present,
+      ensure  => present,
+      require => Package['epel-release']
     }
 
     # add a rule macro for puppet to shorewall
