@@ -395,14 +395,11 @@ class shorewall::configuration(
   define shorewall::interface(
     $interface,
     $broadcast = 'detect',
-    $physical = 'eth0',
-    $options = [],
-    $comment = '',
-    $ensure = present
+    $options   = [],
+    $comment   = '',
+    $ensure    = present
   ) {
     include shorewall::interface::base
-    # TODO: 'physical' should be required, and if interface is not given then it defaults to UPPERCASE($name)+ '_IF'
-    # the idea is that the 'NET_IF' string used internally can/should be generated from interface name...
 
     file { "/etc/shorewall/interfaces.d/${name}.interface":
       ensure  => $ensure,
