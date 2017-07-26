@@ -5,5 +5,5 @@
 #	<%= @comment %>
 #
 <% end -%>
-<%= @name %>	<%= @interface %>		<%= @broadcast %>		<% if @options != [] %><% @options.sort.each do |value| %>,<%= value %><% end %><% end %>
+<%= @name %>	<%= @interface %>		<%= @broadcast %>		<% if @options != [] %><% @options.sort.each do |value| %><%= value %><% end %><% end %>
 
